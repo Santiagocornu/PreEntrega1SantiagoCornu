@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import NavBar from './assets/components/button/NavBar/NavBar'
-import ItemListContainer from './assets/components/button/ItemListContainer/ItemListContainer'
+import NavBar from './components/NavBar/NavBar'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
 
