@@ -1,0 +1,25 @@
+header{
+    background-color: lightyellow;
+    border-bottom: 1px black solid;
+    display: flex;
+    align-items: center;
+    justify-content:space-between
+    
+}
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li{
+    margin:10px
+}
+button{
+    background-color: white;
+    border-radius: 5px;
+    border-width: 0;
+}
+button:hover{
+    background-color: lightgray;
+}
