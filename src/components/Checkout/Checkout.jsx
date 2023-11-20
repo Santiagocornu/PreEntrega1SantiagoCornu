@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { db } from "../../services/firebase";
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
+import { NavLink } from "react-router-dom";
 
 
 const Checkout = () => {
@@ -123,6 +124,7 @@ const Checkout = () => {
             }
 
             <button type="submit"> Confirmar Compra </button>
+            <NavLink to="/"><button>volver</button></NavLink>
 
             {
                 ordenId && (

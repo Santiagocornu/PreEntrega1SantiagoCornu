@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { getProductos } from '../../services/firebase';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { sumarCont, restarCont } from '../customHooks/CustomHooks';
 import { CarritoContext } from '../../context/CarritoContext';
 
@@ -41,7 +41,7 @@ const ItemDetail = ({id, nombre, stock, img}) => {
                   <button onClick={() => setCont(restarCont(cont,itemData.stock))}>-</button>
                   <p>stock disponible:{itemData.stock}</p>
                   {
-                      agregarCantidad > 0 ? (<Link to="/cart">Terminar Compra</Link>) : (<button onClick={() => handleCantidad(cont)}>agregar al carrito</button>)
+                      agregarCantidad > 0 ? (<><NavLink to="/cart"><button>Terminar Compra</button></NavLink><NavLink to="/"><button>volver</button></NavLink></>) : (<><button onClick={() => handleCantidad(cont)}>agregar al carrito</button><NavLink to="/"><button>volver</button></NavLink></>)
                   }
               </>
           ) : (
