@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "emailjs-com": "^3.2.0",
+    "firebase": "^10.6.0",
     "mailjs": "^0.1.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
