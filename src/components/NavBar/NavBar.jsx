@@ -8,28 +8,28 @@ import { Link, NavLink } from 'react-router-dom';
 
 function NavBar() {
   return (
-    <header>
+    <header className='container'>
       <Link to='/'>
-        <h1>limon</h1>
+        <img src='https://i.pinimg.com/564x/ac/dc/fe/acdcfe54adc164b8c17046fdc711ffbe.jpg'></img>
         </Link>
 
         <nav>
-        <ul>
+        
             <NavLink to='categoria/1'>
-            <li><button>frutas</button></li>
+            <button>frutas</button>
             </NavLink>
             <NavLink to='categoria/2'>
-            <li><button>remeras</button></li>
+            <button>remeras</button>
             </NavLink>
             <NavLink to='categoria/3'>
-            <li><button>camperas</button></li>
+            <button>camperas</button>
             </NavLink>
             <NavLink to='categoria/4'>
-            <li><button>pantalones</button></li>
+            <button>pantalones</button>
             </NavLink>
             
 
-        </ul>
+        
 
         </nav>
         <CardWidget/>

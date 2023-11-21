@@ -1,29 +1,22 @@
-header{
-    background-color: lime;
-    border-bottom: 1px black solid;
-    display: flex;
-    align-items: center;
-    justify-content:space-between
-    
-    
-}
-ul{
-    
+
+.container {
+    background-image: url('https://i.pinimg.com/564x/2e/ca/77/2eca7728913000c19843b7009753857b.jpg');
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: row;
-}
-
-li{
-    margin:0px 30px 0px 30px ;
-}
-button{
-    background-color: white;
+    position: relative; 
+    border-bottom: 2px black solid;
+  }
+  
+  
+  button{
+    background-color: #FDE74C; 
     padding: 10px;
     border-radius: 5px;
     border-width: 0;
+    transition: background-color 0.3s ease; 
+    border: 1px black solid;
 }
 button:hover{
-    background-color: lightgray;
+    background-color: #D8B600;
 }
