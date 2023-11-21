@@ -1,0 +1,37 @@
+
+.itemDetail{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center; 
+}
+.buttons{
+    background-color: #FDE74C ;
+    border: 2px black solid;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.display{
+    margin: 30px 30px 30px 30px;
+    background-color: white;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    width: 250px;
+    border: 1px black solid;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.imagen{
+    height: 250px;
+    width: 250px;
+    margin: 30px 30px 30px 30px;
+}
+.but {
+    display: flex;
+    justify-content: space-between;
+}
+

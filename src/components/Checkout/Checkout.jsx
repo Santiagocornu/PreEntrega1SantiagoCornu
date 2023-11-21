@@ -3,6 +3,7 @@ import { CarritoContext } from "../../context/CarritoContext";
 import { db } from "../../services/firebase";
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
 import { NavLink } from "react-router-dom";
+import './Checkout.css'
 
 
 const Checkout = () => {
@@ -24,10 +25,12 @@ const Checkout = () => {
         
         if(!nombre || !apellido || !telefono || !email || !emailConfirmacion) {
             setError("llenar todos los campos");
+            setTimeout(() => setError(null), 10000);
             return;
         }
         if(email !== emailConfirmacion) {
             setError("email mal");
+            setTimeout(() => setError(null), 10000);
             return;
         }
         const orden = {
@@ -70,30 +73,42 @@ const Checkout = () => {
             .catch( error => {
                 console.log(error);
                 setError("error de orden");
+                setTimeout(() => setError(null), 10000);
             })
         })
         .catch((error) => {
             console.log(error);
             setError("error con el stock");
-            
+            setTimeout(() => setError(null), 10000);
         })
 
     }
 
   return (
-    <div>
+    <div className="checkoutparent">
+        <div className="checkout">
         <h2>Checkout</h2>
 
         <form onSubmit={manejadorFormulario} className="formulario">
+            <div className="testo">
             {
+                    
                 carrito.map(producto => (
-                    <div key={producto.item.id}>
+                    <>
+                    <div key={producto.item.id} className="row">
+                        <img src={producto.item.img}></img>
+                        <div className="testo2">
                         <p> {producto.item.nombre} x {producto.cantidad} </p>
-                        <p>{producto.item.precio}</p>
-                        <hr />
+                        <p>${producto.item.precio}</p>
+                        </div>
+                        
                     </div>
+                    <hr />
+                    </>
                 ))
             }
+            </div>
+            <div className="testo">
             <div className="form-group">
                 <label htmlFor="">Nombre</label>
                 <input type="text" onChange={(e)=> setNombre(e.target.value)} />
@@ -122,10 +137,11 @@ const Checkout = () => {
             {
                 error && <p style={{color:"red"}}> {error} </p>
             }
-
+            </div>
+            <div className="checkoutbuton">
             <button type="submit"> Confirmar Compra </button>
             <NavLink to="/"><button>volver</button></NavLink>
-
+            </div>
             {
                 ordenId && (
                     <strong className="orderId">¡Gracias por tu compra! Tu número de orden es: {ordenId} </strong>
@@ -133,6 +149,7 @@ const Checkout = () => {
             }
 
         </form>
+        </div>
     </div>
   )
 }

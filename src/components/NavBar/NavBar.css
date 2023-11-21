@@ -16,7 +16,18 @@
     border-width: 0;
     transition: background-color 0.3s ease; 
     border: 1px black solid;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 button:hover{
     background-color: #D8B600;
+}
+
+button:active {
+  background-color: #FDE74C; 
+  border-color: black;
+}
+
+button:visited {
+  background-color: #F6F6F6; 
+  border-color: #D8B600; 
 }

@@ -3,6 +3,7 @@ import { getProductos } from '../../services/firebase';
 import { Link, NavLink } from 'react-router-dom';
 import { sumarCont, restarCont } from '../customHooks/CustomHooks';
 import { CarritoContext } from '../../context/CarritoContext';
+import './itemDetail.css'
 
 const ItemDetail = ({id, nombre, stock, img}) => {
   const [itemData, setItemData]= useState(null);
@@ -26,23 +27,30 @@ const ItemDetail = ({id, nombre, stock, img}) => {
   },[id]);
 
   return (
-      <div className='Item'>
+      <div className='itemDetail'>
       {isLoading ? (
           <p>Cargando...</p>
       ) : (
           itemData ? (
               <>
-                  <img src={itemData.img} alt={itemData.nombre} />
+                  <img className="imagen" src={itemData.img} alt={itemData.nombre} />
+                  <div className='display'> 
                   <h3> {itemData.nombre} </h3>
+                  <p> {itemData.id}</p>
                   <p>${itemData.precio}</p> {/* Display the precio from the database */}
-                  <p>id:{itemData.id}</p>
+                  <div className='buttons'>
                   <button onClick={() => setCont(sumarCont(cont,itemData.stock))}>+</button>
                   <p>{cont}</p>
                   <button onClick={() => setCont(restarCont(cont,itemData.stock))}>-</button>
-                  <p>stock disponible:{itemData.stock}</p>
+                  </div>
+                  <p>stock disponible: {itemData.stock}</p>
+                  <div className='but'>
                   {
                       agregarCantidad > 0 ? (<><NavLink to="/cart"><button>Terminar Compra</button></NavLink><NavLink to="/"><button>volver</button></NavLink></>) : (<><button onClick={() => handleCantidad(cont)}>agregar al carrito</button><NavLink to="/"><button>volver</button></NavLink></>)
                   }
+                  </div>
+                  </div>
+                  
               </>
           ) : (
               <p>No se encontró el producto</p>
