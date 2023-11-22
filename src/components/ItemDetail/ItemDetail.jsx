@@ -3,7 +3,7 @@ import { getProductos } from '../../services/firebase';
 import { Link, NavLink } from 'react-router-dom';
 import { sumarCont, restarCont } from '../customHooks/CustomHooks';
 import { CarritoContext } from '../../context/CarritoContext';
-import './itemDetail.css'
+import './ItemDetail.css'
 
 const ItemDetail = ({id, nombre, stock, img}) => {
   const [itemData, setItemData]= useState(null);
